@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="test">
+	<head>
+		<meta charset="utf-8">
+		<script src="angular.min.js"></script>
+		<script src="example.js"></script>
+		<link rel="stylesheet" href="styles.css">
+		<title> Template Expanding Directive </title>
+	</head>
+
+	<body>
+		<h1> Template Expanding Directive </h1>
+		<div id="list1" ng-controller="ShoppingListController1 as list">
+			<h3> First List </h3>
+			<list-item></list-item>
+		</div>
+
+		<div id='list2' ng-controller='ShoppingListController1 as list'>
+			<h3> Second List </h3>
+			<list-item></list-item>
+		</div>
+	</body>
+</html>
+
+

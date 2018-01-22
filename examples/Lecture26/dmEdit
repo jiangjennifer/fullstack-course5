@@ -1,0 +1,64 @@
+dmEdit
+
+'use strict';
+
+
+class CashRedistributionIdentifierCtrl {
+
+  /* ============== */
+  /* Static Methods */
+  /* ============== */
+  /**
+   * @ngdoc method
+   * @module portfolioSimulation
+   * @name CashRedistributionIdentifierCtrl#constructor
+   *
+   * @description
+   * Constructor for an instance of `CashRedistributionIdentifierCtrl`.
+  */
+  constructor($element, $scope, psAxiomaSimulation) {
+    this.psSimulation = psAxiomaSimulation;
+    this.identifierLookupCategories = ['EQUITY', 'IND_EQUITY', 'ETF'];
+
+    this.identifierLookupSubmit = (items) => {
+      if (_.isArray(items) && items.length > 0) {
+        this.selectedLongShort[this.selectedSetting].targetSecurityId = items[0].Symbol;
+      }
+    };
+
+    this.identifierLookupCancel = angular.noop;
+
+  }
+
+  /* =============== */
+  /* Private Methods */
+  /* =============== */
+
+  /* ============== */
+  /* Public Methods */
+  /* ============== */
+
+  /* ========== */
+  /* Properties */
+  /* ========== */
+}
+
+/**
+ * @ngdoc component
+ * @module portfolioSimulation
+ * @name CashRedistributionIdentifierCtrl
+ *
+ * @description
+ * A class that represents cash redistribution identifier controller.
+*/
+/* @ngInject */
+angular.module('portfolioSimulation')
+  .component('cashRedistributionIdentifier', {
+    controller: CashRedistributionIdentifierCtrl,
+    templateUrl: 'model/edit/simulations/cash-redistribution-grid/cash-redistribution-identifier.tpl.html',
+    bindings: {
+      simulationSettings: '=',
+      selectedSetting: '=',
+      selectedLongShort: '=',
+    },
+  });

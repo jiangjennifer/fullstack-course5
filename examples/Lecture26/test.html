@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="shoppingListApp">
+	<head>
+		<meta charset="utf-8">
+		<script src="angular.min.js"></script>
+		<script src="test.js"></script>
+		<link rel="stylesheet" href="styles.css">
+		<title>Template expanding directive </title>
+	</head>
+	<body>
+		<div ng-controller="shoppingListController as list">
+			<h3> Shopping List #1 </h3>
+			{{list.name}}
+			<!-- <input type="number" placeholder="Quantity" ng-model="list.quantity">
+			<input type="text" placeholder="ItemName" ng-model="list.itemName">
+			<button ng-click="list.addItem()"> Add Item </button>
+			<ol>
+				<li ng-repeat="item in list.items"> 
+					{{item.quantity}} of {{item.itemName}} 
+					<button ng-click="list.removeItem($index)">Remove </button>
+				</li>
+			</ol> -->
+			<list-item></list-item>
+		</div>
+
+		<div ng-controller="shoppingListController2 as list">
+			<h3> Shopping List #2 </h3>
+			{{list.name}}
+			<input type="number" placeholder="Quantity" ng-model="list.quantity">
+			<input type="text" placeholder="ItemName" ng-model="list.itemName">
+			<button ng-click="list.addItem()"> Add Item </button>
+			<ol>
+				<li ng-repeat="item in list.items"> 
+					{{item.quantity}} of {{item.itemName}} 
+					<button ng-click="list.removeItem($index)">Remove </button>
+				</li>
+			</ol>
+			<div ng-show="list.error" class="error"> {{list.error}} </div>
+		</div>
+</body>
+</html>
+
+
+

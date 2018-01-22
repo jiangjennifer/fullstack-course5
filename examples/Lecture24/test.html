@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="angular.min.js"></script>
+		<script src="test.js"></script>
+		<link rel="stylesheet" href="styles.css">
+		<title>AngularJS Promise </title>
+	</head>
+	<body ng-app="testApp">
+		<h1>Shopping List with Promise </h1>
+		<div ng-controller="shoppingListController as list">
+			<input type='text' placeholder="new item name" ng-model="list.name">
+			<input type='text' placeholder="new item quantity" ng-model='list.quantity'>
+			<button ng-click='list.addItem()'>Add new Item </button>
+			<ul ng-repeat="item in list.items">
+				<li> {{item.quantity}} of {{item.name}} <button ng-click="list.removeItem($index)">Remove Item</button></li>
+			</ul>
+	</body>
+</html>

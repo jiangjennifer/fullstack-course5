@@ -17,7 +17,7 @@
       <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
       <button ng-click="list.addItem();">Add Item</button>
       <ol>
-        <list-item ng-repeat="item in list.items"></list-item>
+        <list-item ng-repeat="item in list.items" ng-click="list.removeItem($index);" ng-blur="list.print()"></list-item>
       </ol>
       <div ng-if="list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
     </div>

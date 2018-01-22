@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="test">
+	<head> 
+		<meta charset="utf-8">
+		<script src="angular.min.js"></script>
+		<script src="test.js"></script>
+		<link rel="stylesheet" href="styles.css">
+		<title> Directive's isolate scope </title>
+	</head>
+	<body>
+		<div ng-controller="ShoppingListController1 as list1">
+			<list-item my-list="list1" list-name="list1 # {{list1.total}}"></list-item>
+		</ol>
+			<div class="error">{{list1.errorMessage}} </div>
+			<button ng-click="list1.callPromise()">Call Promise </button>
+		</div>
+
+		<h1>Shopping List2 </h1>
+		<div ng-controller="ShoppingListController2 as list2">
+			<list-item my-list="list2" list-name="{{list2.listName}}"></list-item>
+			<div class="error">{{list2.errorMessage}} </div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+<h1>{{listName}}</h1>
+<input type="text" ng-model="list.name" placeholder="new item name">
+<input type="number" ng-model="list.quantity" placeholder="new item quantity">
+<button ng-click="list.addItem()">Add Item</button>
+<ol>
+	<li ng-repeat="item in list.items"> 
+		{{item.itemQuantity}} of {{item.itemName}} 
+		<button ng-click="list.remove($index)"> remove item</button>
+	</li>
+</ol>

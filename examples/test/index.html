@@ -1,0 +1,15 @@
+<!doctype html>
+<html ng-app="testApp">
+	<head>
+		<meta charset="utf-8">
+		<script src="angular.min.js"></script>
+		<script src="test.js"></script>
+		<title> Test digest cycle </title>
+	</head>
+	<body ng-controller="testController">
+		<input type='number' placeholder="var1" ng-model='var1'>
+		<button ng-click='add()'>Add</button>
+		var 1 : {{var1}}
+		<div> var 2 : {{var2}} </div>
+	</body>
+</html>

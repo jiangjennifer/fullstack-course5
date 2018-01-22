@@ -1,0 +1,10 @@
+
+<input type="text" placeholder="item name" ng-model="list.itemName">
+<input type="number" placeholder="item quantity" ng-model="list.itemQuantity">
+<button ng-click="list.add()">Add item </button>
+<ol>
+	<li ng-repeat="item in list.items">{{item.quantity}} of {{item.name}} 
+		<button ng-click="list.remove($index)">Remove item</button>
+	</li>
+</ol>
+<div ng-if="list.errorMessage" class="error"> Error: {{list.errorMessage}} </div>

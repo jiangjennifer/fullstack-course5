@@ -47,6 +47,10 @@ function ShoppingListController1(ShoppingListFactory) {
   list.removeItem = function (itemIndex) {
     shoppingList.removeItem(itemIndex);
   };
+
+  list.print = function() {
+    console.log("print is called!");
+  }
 }
 
 
@@ -100,6 +104,7 @@ function ShoppingListService(maxItems) {
   };
 
   service.removeItem = function (itemIndex) {
+    console.log("remove item is called!");
     items.splice(itemIndex, 1);
   };
 
