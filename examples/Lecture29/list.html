@@ -1,0 +1,10 @@
+<h3> {{$ctrl.title}} </h3>
+<ol> 
+	<li ng-repeat="item in $ctrl.myList.items"> {{item.itemQuantity}} of {{item.itemName}} 
+		<div ng-if="$ctrl.cookieError(item.itemName)" class="error"> WARNING! Cookies detected!  </div>
+		<!-- <button ng-click="$ctrl.myRemove({myArg: '$index'})">Remove item </button> -->
+		<button ng-click="$ctrl.myRemove($index)">Remove item </button>
+		<button ng-click="$ctrl.myMethod($index)">my method</button>
+	</li>
+	<button ng-click="$ctrl.changeValue()">change obj value </button>
+</ol>

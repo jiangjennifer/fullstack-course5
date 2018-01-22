@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="test">
+	<head>
+		<meta charset="utf-8">
+		<script src="angular.min.js"></script>
+		<script src="test.js"></script>
+		<link rel="stylesheet" href="styles.css">
+		<title> Using controllers inside directives </title>
+	</head>
+	<body>
+		<div ng-controller="ShoppingListController as list">
+			<input type='text' placeholder="new item name" ng-model='list.itemName'>
+			<input type="number" placeholder="new item quantity" ng-model="list.itemQuantity">
+			<button ng-click="list.add()"> add item </button>
+			<!-- <shopping-list my-list="list" title="{{list.name}}" remove="list.remove(myArg)" obj="list.obj"></shopping-list> -->
+			<shopping-list my-list="list" title="{{list.name}}" my-remove="list.remove" obj="list.obj" my-method="list.method"></shopping-list>
+			{{list.obj.name}}
+		</div>
+
+		<div ng-controller="ShoppingListController as list">
+			<input type='text' placeholder="new item name" ng-model='list.itemName'>
+			<input type="number" placeholder="new item quantity" ng-model="list.itemQuantity">
+			<button ng-click="list.add()"> add item </button>
+			<shopping-list my-list="list" title="{{list.name}}"></shopping-list>
+			{{list.obj.name}}
+		</div>
+	</body>
+</html>
