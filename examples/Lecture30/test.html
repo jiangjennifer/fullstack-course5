@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app='test'>
+  <head>
+	<head>
+		<meta charset="utf-8">
+		<script src="angular.min.js"></script>
+		<script src="test.js"></script>
+		<link rel="stylesheet" href="styles.css">
+		<title> Directive APIs and "&amp" </title>
+	</head>
+	<body ng-controller="ShoppingListController as list">
+		<input type="text" ng-model="list.itemName" placeholder="new item name">
+		<input type="number" ng-model="list.itemQuantity" placeholder="new item quantity">
+		<button ng-click="list.add()"> Add item </button>
+		<my-list 
+			title="List # 1   {{list.size}}" 
+			list="list" 
+			items="list.items"
+			remove="list.remove(index)"></my-list>
+</html>
