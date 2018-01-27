@@ -52,7 +52,9 @@
 		};
 
 		list.remove = function(index) {
-			console.log(list.obj);
+			console.log("this is:", this);
+			console.log("this.obj:", this.obj);
+			console.log("list.obj:", list.obj);
 			service.remove(index);
 		};
 
